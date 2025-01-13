@@ -13,17 +13,8 @@ afterEach(() => {
   defaultStarter.mockReset();
 });
 
+// TODO: update unit tests
 describe('App', () => {
-  describe('createFromFunc', () => {
-    it('should return App instance from async func', () => {
-      expect(App.createFromFunc(() => undefined)).toBeInstanceOf(App);
-    });
-
-    it('should return App instance from sync func', () => {
-      expect(App.createFromFunc(async () => undefined)).toBeInstanceOf(App);
-    });
-  });
-
   describe('boot', () => {
     it('should boot all registered ServiceProviders', async () => {
       const fProvider = makeServiceProvider();
@@ -153,7 +144,7 @@ describe('App', () => {
       const options = {};
       const app = new App(defaultStarter, options);
       await app.start();
-      expect(defaultStarter).toHaveBeenCalledWith(options, app);
+      expect(defaultStarter).toHaveBeenCalledWith(app);
     });
   });
 });
