@@ -80,13 +80,13 @@ describe('App', () => {
       const errorReporterProvider = makeServiceProvider();
       const app = new App(undefined, {
         coreProviders: {
-          'error-reporter': errorReporterProvider,
+          errorReporter: errorReporterProvider,
           logger: loggerProvider,
         },
       });
       expect(app.getProviders()).toEqual(
         expect.objectContaining({
-          'error-reporter': errorReporterProvider,
+          errorReporter: errorReporterProvider,
           logger: loggerProvider,
         }),
       );
@@ -94,7 +94,7 @@ describe('App', () => {
 
     it('should return default core providers', () => {
       const app = new App();
-      expect(app.getProviders()['error-reporter']).toBeInstanceOf(Object);
+      expect(app.getProviders()['errorReporter']).toBeInstanceOf(Object);
       expect(app.getProviders()['logger']).toBeInstanceOf(Object);
     });
   });
