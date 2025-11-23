@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { vi } from 'vitest';
 
 import { ConsoleLogger } from './console-logger';

@@ -1,7 +1,7 @@
 import { AppError } from '@/src/errors';
 import { IServiceProvider } from '@/src/service-provider/types';
 
-import { IContainer, IValidContainerServices, IDefaultContainerServices, IContainerProvidersMap } from './types';
+import { IContainer, IContainerProvidersMap, IDefaultContainerServices, IValidContainerServices } from './types';
 
 export class Container<S extends IValidContainerServices = IDefaultContainerServices> implements IContainer<S> {
   protected _providers: IContainerProvidersMap<S> = {};

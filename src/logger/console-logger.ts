@@ -1,6 +1,6 @@
-/* eslint-disable no-console */
+/** biome-ignore-all lint/suspicious/noConsole: ignore explicit use of console */
 import { AbstractLogger } from './abstract-logger';
-import { LOG_LEVEL, ILogger } from './types';
+import { ILogger, LOG_LEVEL } from './types';
 
 export class ConsoleLogger extends AbstractLogger implements ILogger {
   static create() {

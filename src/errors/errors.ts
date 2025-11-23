@@ -7,8 +7,8 @@ export interface ErrorParams {
 }
 
 export class AppError extends Error {
-  public static setType(errorInstance: object, constructor: Constructor) {
-    const actualProto = constructor.prototype;
+  public static setType(errorInstance: object, constructorFn: Constructor) {
+    const actualProto = constructorFn.prototype;
     if (Object.setPrototypeOf) Object.setPrototypeOf(errorInstance, actualProto);
     else (errorInstance as unknown as Record<string, unknown>).__proto__ = actualProto;
   }

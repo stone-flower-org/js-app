@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 import { ILogger } from '@/src/logger/types';
 
 import { LoggerErrorReporter } from './logger-error-reporter';

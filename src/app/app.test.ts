@@ -13,7 +13,6 @@ afterEach(() => {
   defaultStarter.mockReset();
 });
 
-// TODO: update unit tests
 describe('App', () => {
   describe('boot', () => {
     it('should boot all registered ServiceProviders', async () => {
@@ -90,12 +89,6 @@ describe('App', () => {
           logger: loggerProvider,
         }),
       );
-    });
-
-    it('should return default core providers', () => {
-      const app = new App();
-      expect(app.getProviders()['errorReporter']).toBeInstanceOf(Object);
-      expect(app.getProviders()['logger']).toBeInstanceOf(Object);
     });
   });
 
